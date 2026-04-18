@@ -2,8 +2,26 @@
 
 > 智慧決策分析系統實作 · Web Design Assignment · 2026
 
-**網站入口：** `sophie.html`
+**網站入口：** `index.html`
+**GitHub Pages：** [cpa-sophie.github.io/sophie-world](https://cpa-sophie.github.io/sophie-world/)
 **GitHub：** [CPA-Sophie](https://github.com/CPA-Sophie)
+
+---
+
+## Changelog
+
+### 2026-04-19
+
+- `sophie.html` → 改名為 `index.html`，成為 GitHub Pages 根網址主頁
+- 移除舊版 `index.html`（舊個人頁面）
+- About 段落：新增 **Hometown 區塊**（台西，雲林 → 世界 → AI 敘事起點）
+- About 段落：還原出生地 `born in Taixi, Yunlin, Taiwan`
+- 旅行卡片：`台灣 Taiwan · 故鄉 Home` → 移除「故鄉」，保留 `Home`
+- 興趣卡片：新增 🍷 **葡萄酒 Wine**
+- About 自介文字更新：
+  - 中文：「天生好奇，喜歡學習新事物，也喜歡走步道——」→「對世界充滿好奇，熱愛學習新事物，喜歡走在步道上，」
+  - 英文：`walking trails — experiencing every place on foot` → `exploring trails—experiencing each place step by step`
+- 地圖（SVG）：新增後因效果不佳移除
 
 ---
 
