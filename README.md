@@ -90,6 +90,7 @@ Madrid · Barcelona · Gaudí
 | 🍜 美食 Food | 探索當地美食 |
 | 🎵 音樂 Music | YouTube 嵌入播放清單 |
 | 🧘 瑜珈 Yoga | 忙碌生活中的呼吸與空間 |
+| 🍷 葡萄酒 Wine | 旅行時尋訪當地酒莊 |
 | 🤖 AI 學習 | 連結至 `ai-program.html` |
 
 ---
