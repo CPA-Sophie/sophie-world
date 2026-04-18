@@ -185,6 +185,64 @@
       color: #8a7a6a;
     }
 
+    /* ─── HOMETOWN BLOCK ─── */
+    .hometown-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      margin-top: 40px;
+      padding: 24px 28px;
+      background: linear-gradient(135deg, rgba(196,113,74,0.06), rgba(122,158,126,0.06));
+      border-left: 3px solid var(--terracotta);
+      border-radius: 0 8px 8px 0;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.6s;
+    }
+    .hometown-origin {
+      flex: 0 0 auto;
+      text-align: center;
+    }
+    .hometown-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+    }
+    .hometown-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .hometown-name-en {
+      font-size: 0.75rem;
+      color: var(--brown);
+      margin-top: 2px;
+    }
+    .hometown-arrow {
+      font-size: 1.2rem;
+      color: var(--light-brown);
+      align-self: center;
+      flex: 0 0 auto;
+    }
+    .hometown-narrative {
+      flex: 1;
+      align-self: center;
+    }
+    .hometown-narrative p {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.85rem;
+      color: var(--brown);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .hometown-narrative em {
+      color: var(--terracotta);
+      font-style: normal;
+      font-weight: 600;
+    }
+
     /* ─── TRAVEL SECTION ─── */
     .section {
       padding: 80px;
