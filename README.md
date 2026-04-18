@@ -29,9 +29,8 @@
 
 | 檔案 | 說明 |
 |------|------|
-| `sophie.html` | 個人主頁（旅行、興趣、自我介紹） |
+| `index.html` | 個人主頁（旅行、興趣、自我介紹）· GitHub Pages 根網址 |
 | `ai-program.html` | AI Program 學習日誌（Summary + 12 章日誌） |
-| `index.html` | 首頁入口 |
 
 ---
 
