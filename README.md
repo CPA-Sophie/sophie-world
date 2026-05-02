@@ -1,5 +1,24 @@
 # Sophie's World — Personal Webpage
 
+## Project Index
+
+> This repository (`web_projects/`) is the Sophie's World repo root.
+> The following projects co-exist here or are tracked below.
+
+| # | Project | Path | Type | Status |
+|---|---------|------|------|--------|
+| 1 | **Sophie's World** | `web_projects/` (repo root) | GitHub Pages site | Active |
+| 2 | **NŌOR Brand Website** | `web_projects/Fashion Brand Prompt Webapp/` | Independent nested Git repo · remote: `noor-brand-website` | Active |
+| 3 | **Fukuoka Trip Website** | current: `python_projects/trip_fuk/` → target: `web_projects/fukuoka_trip/` | React/Vite static site | Migration planning required |
+| 4 | **Course Practice** | `web_projects/ch05範例/` | Low-priority course material | Untracked / hold |
+
+**Notes:**
+- Do not move root files (`index.html`, `sophie.html`, `ai-program.html`) into a subfolder — this would break GitHub Pages deployment.
+- Do not move, rename, or remove `Fashion Brand Prompt Webapp/` without a dedicated nested-repo migration plan.
+- Do not move `trip_fuk/` into `web_projects/` until migration plan is confirmed.
+
+---
+
 ## GitHub Pages Status
 
 - Primary page: `index.html`
