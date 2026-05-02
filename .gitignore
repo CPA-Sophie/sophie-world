@@ -1,6 +1,6 @@
 ﻿.claude/
 .vscode/
-Fashion Brand Prompt Webapp/
+noor_brand_website/
 w07_20260418/*.AVI
 w07_20260418/*.mp4
 w07_20260418/*.ogv
@@ -10,7 +10,7 @@ w07_20260418/*.mid
 # Low-priority course practice - hold
 ch05範例/
 # Independent nested repos
-fukuoka_trip/
+fukuoka_trip_website/
 
 # Node modules
 **/node_modules/
