@@ -1,5 +1,15 @@
 # Sophie's World — Personal Webpage
 
+## GitHub Pages Status
+
+- Primary page: `index.html`
+- Public URL: <https://cpa-sophie.github.io/sophie-world/>
+- Redirect page: `sophie.html`
+- Redirect URL: <https://cpa-sophie.github.io/sophie-world/sophie.html>
+- Redirect behavior: `/sophie-world/sophie.html` redirects to `/sophie-world/`
+- Issue status: GitHub Pages 404 redirect fix closed
+- Lock status: `FIX_LOCKED`
+
 > 智慧決策分析系統實作 · Web Design Assignment · 2026
 
 **網站入口：** `index.html`
