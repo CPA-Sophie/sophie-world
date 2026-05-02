@@ -9,3 +9,8 @@ w07_20260418/*.mid
 
 # Low-priority course practice - hold
 ch05範例/
+# Independent nested repos
+fukuoka_trip/
+
+# Node modules
+**/node_modules/
