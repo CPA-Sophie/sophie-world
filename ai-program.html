@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sophie · AI Program</title>
+  <title>Sophie | AI Program Learning Journey</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TC:wght@300;400;600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -59,11 +59,16 @@
     }
     .nav-links a:hover { color: var(--terracotta); }
 
+    a:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
     /* ─── HERO ─── */
     .page-hero {
       padding: 140px 80px 80px;
       max-width: 800px;
-      opacity: 0;
       animation: fadeUp 0.9s ease forwards 0.2s;
     }
 
@@ -122,6 +127,7 @@
       font-size: 1.9rem;
       color: var(--warm-white);
       margin-bottom: 24px;
+      overflow-wrap: anywhere;
     }
 
     .one-line {
@@ -133,6 +139,7 @@
       padding-bottom: 28px;
       border-bottom: 1px solid rgba(255,255,255,0.1);
       line-height: 1.6;
+      overflow-wrap: anywhere;
     }
 
     .summary-block p {
@@ -140,6 +147,7 @@
       color: rgba(255,255,255,0.72);
       line-height: 1.9;
       margin-bottom: 18px;
+      overflow-wrap: anywhere;
     }
 
     /* ─── JOURNEY ─── */
@@ -245,23 +253,43 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
-      nav { padding: 16px 24px; }
+      nav { padding: 14px 20px; gap: 10px; flex-wrap: wrap; }
+      .nav-logo { font-size: 1rem; }
+      .nav-links { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+      .nav-links a { font-size: 0.72rem; letter-spacing: 0.08em; }
       .page-hero { padding: 100px 32px 60px; }
       .summary-block, .ai-journey { padding: 60px 32px; }
       .act-title::before, .act-title::after { width: 18%; }
       .sep { padding: 0 32px; }
     }
+
+    @media (max-width: 480px) {
+      nav { align-items: flex-start; }
+      .nav-logo { width: 100%; }
+      .nav-links { width: 100%; justify-content: flex-start; gap: 12px; }
+      .page-hero { padding: 118px 24px 56px; }
+      .page-hero h1 { font-size: clamp(2.25rem, 14vw, 3.25rem); }
+      .summary-block, .ai-journey { padding: 56px 24px; }
+      .summary-block .inner, .ai-journey .inner { width: 100%; max-width: 327px; margin: 0; overflow: hidden; }
+      .summary-block h2 { font-size: 1.65rem; }
+      .one-line { font-size: 1rem; }
+      .summary-block p, .chapter p { max-width: 100%; overflow-wrap: anywhere; }
+    }
   </style>
 </head>
 <body>
 
-  <nav>
+  <header class="site-header">
+  <nav aria-label="AI program navigation">
     <a href="sophie.html" class="nav-logo">← 回個人頁 Sophie</a>
     <div class="nav-links">
       <a href="#summary">Summary</a>
       <a href="#journey">Journey</a>
     </div>
   </nav>
+  </header>
+
+  <main id="main-content">
 
   <!-- HERO -->
   <div class="page-hero">
@@ -385,6 +413,8 @@
 
     </div>
   </section>
+
+  </main>
 
   <footer>
     <p>Sophie · <a href="sophie.html">← 回個人頁 Back to Sophie</a></p>
