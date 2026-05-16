@@ -1,295 +1,44 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sophie | AI Program Learning Journey</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TC:wght@300;400;600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream: #f5f0e8;
-      --warm-white: #faf8f3;
-      --ink: #1a1410;
-      --brown: #7a5c3a;
-      --terracotta: #c4714a;
-      --sage: #7a9e7e;
-      --gold: #c9a84c;
-      --light-brown: #d4b896;
-    }
-
-    body {
-      background-color: var(--cream);
-      color: var(--ink);
-      font-family: 'DM Sans', 'Noto Serif TC', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      padding: 20px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-      background: rgba(245,240,232,0.88);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(122,92,58,0.1);
-    }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .nav-links { display: flex; gap: 28px; }
-
-    .nav-links a {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--brown);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover { color: var(--terracotta); }
-
-    a:focus-visible {
-      outline: 3px solid var(--gold);
-      outline-offset: 4px;
-      border-radius: 4px;
-    }
-
-    /* ─── HERO ─── */
-    .page-hero {
-      padding: 140px 80px 80px;
-      max-width: 800px;
-      animation: fadeUp 0.9s ease forwards 0.2s;
-    }
-
-    .page-tag {
-      font-size: 0.68rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--sage);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    .page-tag::before {
-      content: '';
-      display: inline-block;
-      width: 24px; height: 1px;
-      background: var(--sage);
-    }
-
-    .page-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 1.1;
-      color: var(--ink);
-      margin-bottom: 16px;
-    }
-
-    .page-hero h1 em {
-      font-style: italic;
-      color: var(--terracotta);
-    }
-
-    /* ─── SUMMARY BLOCK ─── */
-    .summary-block {
-      background: var(--ink);
-      padding: 80px;
-    }
-
-    .summary-block .inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .summary-block .label {
-      font-size: 0.68rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--sage);
-      margin-bottom: 20px;
-    }
-
-    .summary-block h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
-      color: var(--warm-white);
-      margin-bottom: 24px;
-      overflow-wrap: anywhere;
-    }
-
-    .one-line {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.15rem;
-      color: var(--terracotta);
-      margin-bottom: 36px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      line-height: 1.6;
-      overflow-wrap: anywhere;
-    }
-
-    .summary-block p {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.72);
-      line-height: 1.9;
-      margin-bottom: 18px;
-      overflow-wrap: anywhere;
-    }
-
-    /* ─── JOURNEY ─── */
-    .ai-journey {
-      padding: 80px;
-      background: var(--warm-white);
-    }
-
-    .ai-journey .inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .ai-journey .label {
-      font-size: 0.68rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--sage);
-      margin-bottom: 48px;
-    }
-
-    .act {
-      margin-bottom: 72px;
-    }
-
-    .act-title {
-      text-align: center;
-      font-size: 0.72rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--light-brown);
-      margin-bottom: 40px;
-      position: relative;
-    }
-
-    .act-title::before,
-    .act-title::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      width: 28%;
-      height: 1px;
-      background: var(--light-brown);
-    }
-
-    .act-title::before { left: 0; }
-    .act-title::after  { right: 0; }
-
-    .chapter {
-      margin-bottom: 44px;
-      padding-left: 24px;
-      border-left: 2px solid var(--light-brown);
-      transition: border-color 0.3s;
-    }
-
-    .chapter:hover { border-left-color: var(--terracotta); }
-
-    .chapter h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      color: var(--ink);
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .chapter p {
-      font-size: 0.95rem;
-      color: #5a4a3a;
-      line-height: 1.95;
-    }
-
-    /* ─── SEP ─── */
-    .sep {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 0 80px;
-      margin: 20px 0;
-    }
-    .sep-line { flex: 1; height: 1px; background: var(--light-brown); }
-    .sep-icon { color: var(--gold); font-size: 1rem; }
-
-    /* ─── FOOTER ─── */
-    footer {
-      text-align: center;
-      padding: 48px;
-      border-top: 1px solid rgba(122,92,58,0.15);
-      font-size: 0.8rem;
-      color: var(--brown);
-      letter-spacing: 0.1em;
-    }
-
-    footer a {
-      color: var(--terracotta);
-      text-decoration: none;
-    }
-
-    /* ─── ANIMATIONS ─── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 768px) {
-      nav { padding: 14px 20px; gap: 10px; flex-wrap: wrap; }
-      .nav-logo { font-size: 1rem; }
-      .nav-links { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
-      .nav-links a { font-size: 0.72rem; letter-spacing: 0.08em; }
-      .page-hero { padding: 100px 32px 60px; }
-      .summary-block, .ai-journey { padding: 60px 32px; }
-      .act-title::before, .act-title::after { width: 18%; }
-      .sep { padding: 0 32px; }
-    }
-
-    @media (max-width: 480px) {
-      nav { align-items: flex-start; }
-      .nav-logo { width: 100%; }
-      .nav-links { width: 100%; justify-content: flex-start; gap: 12px; }
-      .page-hero { padding: 118px 24px 56px; }
-      .page-hero h1 { font-size: clamp(2.25rem, 14vw, 3.25rem); }
-      .summary-block, .ai-journey { padding: 56px 24px; }
-      .summary-block .inner, .ai-journey .inner { width: 100%; max-width: 327px; margin: 0; overflow: hidden; }
-      .summary-block h2 { font-size: 1.65rem; }
-      .one-line { font-size: 1rem; }
-      .summary-block p, .chapter p { max-width: 100%; overflow-wrap: anywhere; }
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="ai-program.css">
 </head>
 <body>
 
   <header class="site-header">
-  <nav aria-label="AI program navigation">
-    <a href="sophie.html" class="nav-logo">← 回個人頁 Sophie</a>
-    <div class="nav-links">
-      <a href="#summary">Summary</a>
-      <a href="#journey">Journey</a>
+  <nav class="navbar navbar-expand-lg fixed-top" aria-label="AI program navigation">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand nav-logo">Sophie · AI Program</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aiProgramNavbar" aria-controls="aiProgramNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="aiProgramNavbar">
+        <div class="navbar-nav ms-auto nav-links">
+          <a class="nav-link" href="index.html">返回首頁</a>
+          <a class="nav-link" href="#summary">Summary</a>
+          <a class="nav-link" href="#journey" data-act-tab="#act-i-tab-button">Act I</a>
+          <a class="nav-link" href="#journey" data-act-tab="#act-ii-tab-button">Act II</a>
+          <a class="nav-link" href="#journey" data-act-tab="#act-iii-tab-button">Act III</a>
+          <a class="nav-link" href="#journey" data-act-tab="#act-iv-tab-button">Act IV</a>
+        </div>
+      </div>
     </div>
   </nav>
   </header>
 
   <main id="main-content">
+
+  <nav class="page-breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">AI Program</li>
+    </ol>
+  </nav>
 
   <!-- HERO -->
   <div class="page-hero">
@@ -300,6 +49,10 @@
   <!-- SUMMARY -->
   <section id="summary" class="summary-block">
     <div class="inner">
+      <div class="alert alert-dismissible fade show learning-alert" role="alert">
+        🌱 This learning journey is still ongoing · 持續更新中
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
       <div class="label">Summary · 學習總結</div>
       <h2>From Trial-and-Error<br>to Structured Thinking</h2>
       <p class="one-line">From trial-and-error to structured thinking — learning how to truly work with AI.</p>
@@ -331,83 +84,108 @@
     <div class="inner">
       <div class="label">Learning Journal · 學習日誌</div>
 
-      <!-- ACT I -->
-      <div class="act">
-        <div class="act-title">— Act I · Beginning —</div>
+      <ul class="nav nav-tabs act-tabs" id="actTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="act-i-tab-button" data-bs-toggle="tab" data-bs-target="#act-i-tab" type="button" role="tab" aria-controls="act-i-tab" aria-selected="true">Act I · Beginning</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="act-ii-tab-button" data-bs-toggle="tab" data-bs-target="#act-ii-tab" type="button" role="tab" aria-controls="act-ii-tab" aria-selected="false">Act II · Struggle</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="act-iii-tab-button" data-bs-toggle="tab" data-bs-target="#act-iii-tab" type="button" role="tab" aria-controls="act-iii-tab" aria-selected="false">Act III · Turning Point</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="act-iv-tab-button" data-bs-toggle="tab" data-bs-target="#act-iv-tab" type="button" role="tab" aria-controls="act-iv-tab" aria-selected="false">Act IV · Now</button>
+        </li>
+      </ul>
 
-        <div class="chapter">
-          <h2>1. The Beginning — A Spark</h2>
-          <p>I first stepped into the AI world in March 2025, during a two-day AI Application Planner course. What stayed with me the most was not the content itself, but a teacher whose passion for AI deeply moved me. That moment planted a seed. Later, I even had the opportunity to become part of his graduation project team. It felt like a quiet beginning of something meaningful.</p>
+      <div class="tab-content" id="actTabsContent">
+        <div class="tab-pane fade show active" id="act-i-tab" role="tabpanel" aria-labelledby="act-i-tab-button" tabindex="0">
+          <!-- ACT I -->
+          <div class="act" id="act-i">
+            <div class="act-title">— Act I · Beginning —</div>
+
+            <div class="chapter">
+              <h2>1. The Beginning — A Spark</h2>
+              <p>I first stepped into the AI world in March 2025, during a two-day AI Application Planner course. What stayed with me the most was not the content itself, but a teacher whose passion for AI deeply moved me. That moment planted a seed. Later, I even had the opportunity to become part of his graduation project team. It felt like a quiet beginning of something meaningful.</p>
+            </div>
+
+            <div class="chapter">
+              <h2>2. Feeling Small in a Big Room</h2>
+              <p>At the freshman orientation, I saw classmates from all kinds of professional backgrounds. I felt small and unsure of myself. Terms like Decision Trees and SVM sounded distant and unfamiliar. I barely understood what was being discussed, yet I knew one thing clearly — I wanted to take something real away from this AI program.</p>
+            </div>
+
+            <div class="chapter">
+              <h2>3. Confusion and Overload</h2>
+              <p>Every day except Monday, there were different AI classes taught by different instructors. Each brought new knowledge, new perspectives, and new complexity. I often found myself in a strange state — half understanding, half lost. It was overwhelming, yet I kept going.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="chapter">
-          <h2>2. Feeling Small in a Big Room</h2>
-          <p>At the freshman orientation, I saw classmates from all kinds of professional backgrounds. I felt small and unsure of myself. Terms like Decision Trees and SVM sounded distant and unfamiliar. I barely understood what was being discussed, yet I knew one thing clearly — I wanted to take something real away from this AI program.</p>
+        <div class="tab-pane fade" id="act-ii-tab" role="tabpanel" aria-labelledby="act-ii-tab-button" tabindex="0">
+          <!-- ACT II -->
+          <div class="act" id="act-ii">
+            <div class="act-title">— Act II · Struggle —</div>
+
+            <div class="chapter">
+              <h2>4. Sacrifice and Exhaustion</h2>
+              <p>Between work and school, my life became extremely compressed. Apart from walking fifteen minutes from the MRT station to the classroom, I had almost no time left for myself — not even for exercise. The Python course was especially intense. There were moments when I genuinely questioned whether I had chosen the wrong path.</p>
+            </div>
+
+            <div class="chapter">
+              <h2>5. A Familiar Struggle</h2>
+              <p>When deadlines for two statistics courses approached, I was suddenly pulled back to memories of writing my master's thesis in accounting at Fu Jen University. The feeling was both familiar and distant — a mix of pressure, discipline, and quiet persistence.</p>
+            </div>
+
+            <div class="chapter">
+              <h2>6. Fighting to Work with AI</h2>
+              <p>During the first semester, working with AI tools was not easy. I wanted to collaborate with them effectively, but reality was far from ideal. I spent a significant amount of time trying to complete projects, yet often felt limited by my own abilities. Still, I moved forward quietly and finished the semester.</p>
+            </div>
+
+            <div class="chapter">
+              <h2>7. Struggling Alone in Winter</h2>
+              <p>During the winter break, I tried to build machine learning models on my own using Colab. It was a process of trial and error — almost like crafting something from scratch without guidance. I invested a lot of time and effort, but kept getting stuck, especially in the gap between myself and effective AI collaboration.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="chapter">
-          <h2>3. Confusion and Overload</h2>
-          <p>Every day except Monday, there were different AI classes taught by different instructors. Each brought new knowledge, new perspectives, and new complexity. I often found myself in a strange state — half understanding, half lost. It was overwhelming, yet I kept going.</p>
-        </div>
-      </div>
+        <div class="tab-pane fade" id="act-iii-tab" role="tabpanel" aria-labelledby="act-iii-tab-button" tabindex="0">
+          <!-- ACT III -->
+          <div class="act" id="act-iii">
+            <div class="act-title">— Act III · Turning Point —</div>
 
-      <!-- ACT II -->
-      <div class="act">
-        <div class="act-title">— Act II · Struggle —</div>
+            <div class="chapter">
+              <h2>8. A Turning Point — Alignment</h2>
+              <p>Everything started to change after the new semester began. Working in VS Code with GPT and Claude, I finally achieved alignment in how to collaborate with AI. From that moment on, something shifted. Every project and every topic I cared about became more manageable. Both the speed and quality of my work came under control.</p>
+            </div>
 
-        <div class="chapter">
-          <h2>4. Sacrifice and Exhaustion</h2>
-          <p>Between work and school, my life became extremely compressed. Apart from walking fifteen minutes from the MRT station to the classroom, I had almost no time left for myself — not even for exercise. The Python course was especially intense. There were moments when I genuinely questioned whether I had chosen the wrong path.</p>
-        </div>
-
-        <div class="chapter">
-          <h2>5. A Familiar Struggle</h2>
-          <p>When deadlines for two statistics courses approached, I was suddenly pulled back to memories of writing my master's thesis in accounting at Fu Jen University. The feeling was both familiar and distant — a mix of pressure, discipline, and quiet persistence.</p>
+            <div class="chapter">
+              <h2>9. Looking Back — Nothing Was Wasted</h2>
+              <p>I still remember what Nick once told me — that none of my struggles were wasted. Looking back now, I understand what he meant. Every obstacle I faced became part of my foundation. Those moments of being stuck were not failures; they were preparation.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="chapter">
-          <h2>6. Fighting to Work with AI</h2>
-          <p>During the first semester, working with AI tools was not easy. I wanted to collaborate with them effectively, but reality was far from ideal. I spent a significant amount of time trying to complete projects, yet often felt limited by my own abilities. Still, I moved forward quietly and finished the semester.</p>
-        </div>
+        <div class="tab-pane fade" id="act-iv-tab" role="tabpanel" aria-labelledby="act-iv-tab-button" tabindex="0">
+          <!-- ACT IV -->
+          <div class="act" id="act-iv">
+            <div class="act-title">— Act IV · Now —</div>
 
-        <div class="chapter">
-          <h2>7. Struggling Alone in Winter</h2>
-          <p>During the winter break, I tried to build machine learning models on my own using Colab. It was a process of trial and error — almost like crafting something from scratch without guidance. I invested a lot of time and effort, but kept getting stuck, especially in the gap between myself and effective AI collaboration.</p>
-        </div>
-      </div>
+            <div class="chapter">
+              <h2>10. Where I Am Now</h2>
+              <p>Now, with about two months left before the semester ends, I can see that I have changed — even if only a little. I have gained stronger logical thinking and a better sense of project structure. Today, April 18, 2026, I attended an online class at home. After pushing myself to stay awake despite exhaustion, I finally gave in and fell asleep. I woke up at 6 PM to find food.</p>
+            </div>
 
-      <!-- ACT III -->
-      <div class="act">
-        <div class="act-title">— Act III · Turning Point —</div>
+            <div class="chapter">
+              <h2>11. Gratitude and Reality</h2>
+              <p>I am grateful to my body for carrying me through this journey. In some ways, not much has changed — I even gained some weight. But I have learned something about AI, and that matters. More importantly, I am still here, still moving forward.</p>
+            </div>
 
-        <div class="chapter">
-          <h2>8. A Turning Point — Alignment</h2>
-          <p>Everything started to change after the new semester began. Working in VS Code with GPT and Claude, I finally achieved alignment in how to collaborate with AI. From that moment on, something shifted. Every project and every topic I cared about became more manageable. Both the speed and quality of my work came under control.</p>
-        </div>
-
-        <div class="chapter">
-          <h2>9. Looking Back — Nothing Was Wasted</h2>
-          <p>I still remember what Nick once told me — that none of my struggles were wasted. Looking back now, I understand what he meant. Every obstacle I faced became part of my foundation. Those moments of being stuck were not failures; they were preparation.</p>
-        </div>
-      </div>
-
-      <!-- ACT IV -->
-      <div class="act">
-        <div class="act-title">— Act IV · Now —</div>
-
-        <div class="chapter">
-          <h2>10. Where I Am Now</h2>
-          <p>Now, with about two months left before the semester ends, I can see that I have changed — even if only a little. I have gained stronger logical thinking and a better sense of project structure. Today, April 18, 2026, I attended an online class at home. After pushing myself to stay awake despite exhaustion, I finally gave in and fell asleep. I woke up at 6 PM to find food.</p>
-        </div>
-
-        <div class="chapter">
-          <h2>11. Gratitude and Reality</h2>
-          <p>I am grateful to my body for carrying me through this journey. In some ways, not much has changed — I even gained some weight. But I have learned something about AI, and that matters. More importantly, I am still here, still moving forward.</p>
-        </div>
-
-        <div class="chapter">
-          <h2>12. Looking Ahead</h2>
-          <p>What I look forward to now is June — the end of the semester, and a trip to Japan. It feels like a small reward waiting at the end of a long and quiet journey.</p>
+            <div class="chapter">
+              <h2>12. Looking Ahead</h2>
+              <p>What I look forward to now is June — the end of the semester, and a trip to Japan. It feels like a small reward waiting at the end of a long and quiet journey.</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -421,5 +199,18 @@
     <p style="margin-top:8px;opacity:0.6;">AI Program · 智慧決策分析系統實作 · 2026</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('[data-act-tab]').forEach((link) => {
+      link.addEventListener('click', () => {
+        const tabButton = document.querySelector(link.dataset.actTab);
+        if (tabButton) {
+          bootstrap.Tab.getOrCreateInstance(tabButton).show();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
+
