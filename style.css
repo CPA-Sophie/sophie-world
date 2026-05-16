@@ -482,7 +482,7 @@
     }
 
     .reading-author {
-      font-size: 0.78rem;
+      font-size: 0.68rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--terracotta);
@@ -491,7 +491,7 @@
 
     .reading-work {
       font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
-      font-size: 1.35rem;
+      font-size: 1rem;
       color: var(--deep-brown);
       line-height: 1.5;
       font-weight: 500;
@@ -499,7 +499,7 @@
     }
 
     .reading-note {
-      font-size: 0.82rem;
+      font-size: 0.68rem;
       color: #9a8a80;
       margin-top: 20px;
     }
@@ -509,7 +509,7 @@
       background: linear-gradient(transparent 62%, rgba(211, 154, 116, 0.22) 62%);
       color: #2f2a28;
       font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(1.45rem, 3vw, 2.25rem);
       font-weight: 500;
       line-height: 1.55;
       letter-spacing: 0.04em;
@@ -518,7 +518,7 @@
     .reading-reflection {
       margin-top: 26px;
       font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
-      font-size: 1.08rem;
+      font-size: 0.9rem;
       line-height: 2;
       color: #6f625c;
       letter-spacing: 0.04em;
@@ -539,7 +539,7 @@
       border-radius: 999px;
       color: var(--terracotta);
       text-decoration: none;
-      font-size: 0.78rem;
+      font-size: 0.68rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       transition: background-color 0.2s, color 0.2s, transform 0.2s;
@@ -855,6 +855,6 @@
         min-height: 180px;
       }
       .reading-card { padding: 24px; }
-      .reading-quote { font-size: 1.35rem; }
-      .reading-reflection { font-size: 0.94rem; }
+      .reading-quote { font-size: 1.15rem; }
+      .reading-reflection { font-size: 0.82rem; }
     }
